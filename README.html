@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  />
+<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+<style>
+body {
+  box-sizing: border-box;
+  max-width: 740px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+</style>
+
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css'>
+<script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('markdown-body');
+  document.querySelectorAll('pre code').forEach((code) => {
+    if (code.className != 'mermaid') {
+      hljs.highlightBlock(code);
+    }
+  });
+});
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.6.3/mermaid.min.js'></script>
+<script>
+mermaid.initialize({
+  theme: 'default',  // default, forest, dark, neutral
+  startOnLoad: true
+});
+</script>
+
+</head>
+
+<body>
+
+<h1 id="exploringfirebase">Exploring Firebase</h1>
+
+<h2 id="dotenvconfigurationwithwebpack">Dot env configuration with webpack</h2>
+
+<p>The instructions from this <a href="https://stackoverflow.com/questions/46224986/how-to-pass-env-file-variables-to-webpack-config">stackoverflow link</a></p>
+
+<pre><code class="shell"># install dependency
+npm install dotenv --save
+</code></pre>
+
+<p>Once the <code>package</code> is installed, update the <code>webpack.config.js</code>:</p>
+
+<pre><code class="javascript">const webpack = require('webpack'); // only add this if you don't have yet
+
+// replace accordingly './.env' with the path of your .env file
+require('dotenv').config({ path: './.env' });
+</code></pre>
+
+<p>and finally update the <code>plugins</code> section with below</p>
+
+<pre><code class="javascript">    plugins: [
+        new webpack.DefinePlugin({
+            &quot;process.env&quot;: JSON.stringify(process.env)
+        })
+    ],
+</code></pre>
+
+<p>After updating the <code>package.json</code> with the build command, run <code>npm run build</code>.</p>
+
+<pre><code class="shell">❯ npm run build
+
+> unwiredjs@1.0.0 build
+> webpack
+
+asset bundle.js 1.43 MiB [emitted] (name: main)
+runtime modules 891 bytes 4 modules
+modules by path ./node_modules/ 1.27 MiB
+  modules by path ./node_modules/@firebase/ 1.24 MiB
+    modules by path ./node_modules/@firebase/auth/dist/esm2017/*.js 376 KiB 2 modules
+    + 6 modules
+  modules by path ./node_modules/firebase/ 971 bytes
+    ./node_modules/firebase/app/dist/index.esm.js 826 bytes [built] [code generated]
+    ./node_modules/firebase/firestore/dist/index.esm.js 75 bytes [built] [code generated]
+    ./node_modules/firebase/auth/dist/index.esm.js 70 bytes [built] [code generated]
+  modules by path ./node_modules/idb/build/*.js 10.4 KiB
+    ./node_modules/idb/build/index.js 3.09 KiB [built] [code generated]
+    ./node_modules/idb/build/wrap-idb-value.js 7.32 KiB [built] [code generated]
+  ./node_modules/tslib/tslib.es6.mjs 15.9 KiB [built] [code generated]
+./src/index.js 4.69 KiB [built] [code generated]
+webpack 5.89.0 compiled successfully in 277 ms
+asset bundle.js 1.43 MiB [emitted] (name: main)
+cached modules 1.27 MiB [cached] 14 modules
+runtime modules 891 bytes 4 modules
+./src/index.js 4.52 KiB [built] [code generated]
+webpack 5.89.0 compiled successfully in 30 ms
+</code></pre>
+
+<p>Start a local web server to access the <code>html</code> over browser. Here, I started a local <code>python</code> web server over port <code>5500</code>.</p>
+
+<pre><code class="shell">❯ python3 -m http.server 5500
+</code></pre>
+
+<p>Now, the page with form fields can be accessed over <code>http://localhost:5500/dist/index.html</code> and it looks as shown below:</p>
+
+<p>[<img src="images/page.png" alt="Browser page" />]</p>
+
+</body>
+</html>

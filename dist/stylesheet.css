@@ -1,0 +1,133 @@
+h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06d85f;
+  margin: 20px 0;
+}
+
+p {
+  margin: 1em auto;
+  text-align: center;
+  color: orchid;
+  font-family: Times, sans-serif;
+  font-size: 20px;
+  font-style: bold;
+}
+
+body {
+  /* display: grid; */
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  top: 80px;
+  /* width: 40%; */
+  background-color: #f1f1f1;
+}
+
+form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  width: 400px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+input[type="submit"] {
+  padding: 10px 15px;
+  margin: 10px;
+  color: white;
+  width: 400px;
+  background: #00c0ff;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+select {
+  margin: 10px;
+  font-family: cursive, sans-serif;
+  outline: 0;
+  width: 400px;
+  background: #2ecc71;
+  color: #fff;
+  border: 1px solid crimson;
+  padding: 4px;
+  border-radius: 9px;
+}
+
+input[type="email"] {
+  width: 400px;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  outline: none;
+  background: linear-gradient(to left top, #000, #534b4f) fixed;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.5s;
+}
+
+input[type="email"]:hover {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to left top, #000, #4e2d69) fixed;
+}
+
+input[type="password"] {
+  width: 400px;
+  padding: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  outline: none;
+  background: linear-gradient(to left top, #000, #534b4f) fixed;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.5s;
+}
+
+input[type="password"]:hover {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to left top, #000, #4e2d69) fixed;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[class="logout"] {
+  width: 425px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+  background: linear-gradient(to left top, #000, #4e2d69) fixed;
+  border-radius: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+button[class="logout"]:hover {
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(to left top, #000, #8b5db0) fixed;
+}
+
+button[class="logout"]:focus {
+  background: linear-gradient(to left top, #8b5db0, #000) fixed;
+}

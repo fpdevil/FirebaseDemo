@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase with Fire!</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<body>
+    <h1>Firebase Demo</h1>
+
+    <p>Add Movie to Firebase</p>
+    <form class="add">
+        <input type="text" placeholder="Name" name="name" autocomplete="off">
+        <input type="text" placeholder="Description" name="description" autocomplete="off">
+        <select id="" name="category" style="padding:10px;border-radius:10px;">
+            <option value="drama">Drama</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="thriller">Thriller</option>
+            <option value="fiction">Science Fiction</option>
+        </select>
+        <input type="submit" value="Add Movie">
+    </form>
+
+    <p>Delete Movie from Firebase</p>
+    <form class="delete" style="margin-top: 20px;">
+        <input type="text" placeholder="Movie ID" name="id" autocomplete="off">
+        <input type="submit" value="Delete Movie">
+    </form>
+
+
+    <p>Update Movie in Firebase</p>
+    <form class="update" style="margin-top: 20px;">
+        <input type="text" placeholder="Movie ID" name="id" autocomplete="off">
+        <input type="text" placeholder="Name" name="name" autocomplete="off">
+        <input type="text" placeholder="Description" name="description" autocomplete="off">
+        <input type="submit" value="Update Movie">
+    </form>
+
+    <p>Register user with Email</p>
+    <form class="register" style="margin-top: 20px;">
+        <input type="email" placeholder="Email" name="email" autocomplete="off">
+        <input type="password" placeholder="Password" name="password" autocomplete="off">
+        <input type="submit" value="Register User">
+    </form>
+
+    <p>Login using Email</p>
+    <form class="login" style="margin-top: 20px;">
+        <input type="email" placeholder="Email" name="email" autocomplete="off">
+        <input type="password" placeholder="Password" name="password" autocomplete="off">
+        <input type="submit" value="Login">
+    </form>
+
+    <p>Finally Logout</p>
+    <div>
+        <button class="logout" style="margin-top: 20px;">LogOut</button>
+    </div>
+
+    <script type="text/javascript" src="bundle.js"></script>
+</body>
+
+</html>
